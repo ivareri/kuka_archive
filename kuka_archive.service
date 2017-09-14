@@ -1,0 +1,10 @@
+[Unit]
+Description=Service for rotating backups from Kuka KRC2
+After=local-fs.target remote-fs.target
+
+[Service]
+Type=simple
+ExecStart=PATH_TO_SCRIPT/kuka_archive.sh -d /media/store/backup/floor
+
+[Install]
+WantedBy=default.target

@@ -17,6 +17,8 @@ show_help() {
     echo "-h display this help message"
 }
 
+command -v inotifywait >/dev/null 2>&1 || { echo >&2 "I require inotifywait but it's not installed.  Aborting."; exit 1; }
+
 OPTIND=1
 while getopts ":h?d:f:" opt; do
         case $opt in
